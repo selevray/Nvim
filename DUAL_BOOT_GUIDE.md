@@ -22,7 +22,7 @@ Oui, il existe des solutions ! Voici vos options :
    - Installez Windows normalement
 
 2. **Installer Linux en second**
-   - Utilisez une distribution compatible avec Secure Boot (Ubuntu 20.04+, Fedora, etc.)
+   - Utilisez une distribution compatible avec Secure Boot (Ubuntu 22.04 LTS+, Fedora, etc.)
    - Installez Linux en mode UEFI (pas Legacy)
    - Le bootloader (GRUB) s'installera automatiquement
 
@@ -125,7 +125,7 @@ Sur Windows, vérifiez que :
 
 ## Ressources Supplémentaires
 
-- [Documentation WSL2](https://docs.microsoft.com/en-us/windows/wsl/)
+- [Documentation WSL2](https://learn.microsoft.com/en-us/windows/wsl/)
 - [Guide Ubuntu Dual Boot](https://ubuntu.com/tutorials/install-ubuntu-desktop)
 - [Valorant Vanguard Requirements](https://support-valorant.riotgames.com/)
 
