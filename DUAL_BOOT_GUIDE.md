@@ -65,10 +65,13 @@ Je recommande **Ubuntu 24.04 LTS** (facile, stable, bien documenté) :
 
 ### Étape 4 : Installer Linux (20-30 min)
 
+⚠️ **Note importante sur Secure Boot** : Vous n'avez PAS besoin de désactiver Secure Boot ! Ubuntu, Fedora et Pop!_OS supportent Secure Boot nativement. Garder Secure Boot activé est important pour Valorant sur Windows 11.
+
 1. **Redémarrez** votre PC avec la clé USB insérée
 2. **Entrez dans le BIOS/Boot Menu** :
    - Appuyez sur `F12`, `F2`, `DEL`, ou `ESC` au démarrage (dépend de votre PC)
    - Marques courantes : Dell (F12), HP (ESC puis F9), Asus (F2/DEL), MSI (DEL)
+   - **Vérifiez que Secure Boot est ACTIVÉ** (recommandé pour Valorant)
 3. **Sélectionnez** la clé USB dans le menu de boot
 4. **Choisissez** "Try or Install Ubuntu"
 5. **Suivez l'installation** :
@@ -227,7 +230,22 @@ Vérifiez la compatibilité sur [ProtonDB](https://www.protondb.com/).
 
 ### Le Secure Boot pose-t-il problème ?
 
-Ubuntu gère le Secure Boot automatiquement. Si vous avez des soucis, désactivez-le dans le BIOS.
+**Bonne nouvelle : NON, vous n'avez PAS besoin de désactiver Secure Boot !** 
+
+Les distributions Linux modernes supportent Secure Boot :
+- **Ubuntu 18.04+, 22.04, 24.04** : Support natif de Secure Boot (bootloader signé)
+- **Fedora** : Support natif de Secure Boot
+- **Pop!_OS** : Support natif de Secure Boot
+
+**Important pour Valorant** :
+- Valorant/Vanguard **nécessite Secure Boot activé** sur Windows 11
+- En gardant Secure Boot activé, vous pourrez jouer à Valorant sans problème
+- Le dual-boot fonctionne parfaitement **avec** Secure Boot activé
+
+**Si vous rencontrez des problèmes** :
+- Vérifiez que vous installez en mode UEFI (pas Legacy/CSM)
+- Ubuntu/Fedora installeront automatiquement un bootloader signé (shim)
+- En dernier recours seulement : désactivez Secure Boot dans le BIOS (⚠️ mais Valorant pourrait ne plus fonctionner)
 
 ## 🚨 Dépannage
 

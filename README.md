@@ -101,6 +101,14 @@ Au démarrage de votre PC, le bootloader GRUB apparaît automatiquement :
 - **Pour Windows** : Sélectionnez "Windows Boot Manager" dans le menu GRUB
 - **Pour changer le défaut** : Éditez `/etc/default/grub` et changez `GRUB_DEFAULT`
 
+### À propos de Secure Boot
+
+**Bonne nouvelle** : Vous n'avez PAS besoin de désactiver Secure Boot pour le dual-boot !
+
+- Ubuntu 18.04+, Fedora, et Pop!_OS supportent Secure Boot nativement
+- Garder Secure Boot activé est **recommandé** et **nécessaire** pour Valorant sur Windows 11
+- Le dual-boot fonctionne parfaitement avec Secure Boot activé
+
 ### Partage de fichiers entre Windows et Linux
 
 ```bash
