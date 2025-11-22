@@ -135,11 +135,15 @@ UEFI Firmware Settings
 Linux peut lire vos fichiers Windows :
 
 ```bash
-# Vos partitions Windows sont généralement dans /mnt ou se montent automatiquement
-ls /mnt/c/Users/VotreNom/  # Exemple
+# Dans le gestionnaire de fichiers, vos partitions Windows apparaissent automatiquement
+# Elles sont généralement montées dans /media/votre_utilisateur/
+ls /media/$USER/  # Pour voir les partitions disponibles
+
+# Ou trouvez votre partition Windows manuellement
+lsblk -f  # Liste toutes les partitions
 ```
 
-Dans le gestionnaire de fichiers Ubuntu, vous verrez vos disques Windows automatiquement !
+Dans le gestionnaire de fichiers Ubuntu (Files/Nautilus), vous verrez vos disques Windows automatiquement dans la barre latérale !
 
 ### Option 2 : Partition partagée (recommandé pour projets)
 
@@ -157,11 +161,16 @@ Si vous voulez que Windows démarre par défaut :
 
 ```bash
 # Sous Linux
+# D'abord, trouvez la position de Windows dans GRUB
+grep -i windows /boot/grub/grub.cfg | grep menuentry
+
+# Éditez la configuration
 sudo nano /etc/default/grub
 
 # Trouvez la ligne GRUB_DEFAULT=0
-# Changez-la en GRUB_DEFAULT=2 (généralement Windows est en position 2)
-# ou utilisez : GRUB_DEFAULT="Windows Boot Manager"
+# Changez-la en utilisant le nom exact ou le numéro de position
+# Option 1 (recommandé) : GRUB_DEFAULT="Windows Boot Manager"
+# Option 2 : GRUB_DEFAULT=2  (remplacez 2 par la bonne position trouvée ci-dessus)
 
 # Sauvegardez (Ctrl+O, Entrée, Ctrl+X)
 # Appliquez les changements

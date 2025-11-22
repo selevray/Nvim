@@ -105,9 +105,12 @@ Au démarrage de votre PC, le bootloader GRUB apparaît automatiquement :
 
 ```bash
 # Linux peut lire les partitions Windows (NTFS)
-# Monter automatiquement la partition Windows
-sudo mkdir /mnt/windows
-sudo mount /dev/nvme0n1p3 /mnt/windows  # Adaptez selon votre partition
+# D'abord, identifiez votre partition Windows
+lsblk -f  # ou: sudo fdisk -l
+
+# Monter manuellement la partition Windows (adaptez le device)
+sudo mkdir -p /mnt/windows
+sudo mount /dev/sdXN /mnt/windows  # Remplacez sdXN par votre partition (ex: sda2, nvme0n1p3)
 
 # Ou ajoutez dans /etc/fstab pour montage automatique
 ```
@@ -219,8 +222,9 @@ nvim
 
 Installez une Nerd Font :
 ```bash
-# Exemple avec JetBrainsMono Nerd Font
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip
+# Téléchargez une Nerd Font depuis https://github.com/ryanoasis/nerd-fonts/releases
+# Exemple avec JetBrainsMono Nerd Font (vérifiez la dernière version)
+wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
 unzip JetBrainsMono.zip -d ~/.local/share/fonts/
 fc-cache -fv
 ```
