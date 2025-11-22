@@ -110,7 +110,7 @@ lsblk -f  # ou: sudo fdisk -l
 
 # Monter manuellement la partition Windows (adaptez le device)
 sudo mkdir -p /mnt/windows
-sudo mount /dev/sdXN /mnt/windows  # Remplacez sdXN par votre partition (ex: sda2, nvme0n1p3)
+sudo mount -t ntfs-3g -o uid=1000,gid=1000 /dev/sdXN /mnt/windows  # Remplacez sdXN par votre partition (ex: sda2, nvme0n1p3)
 
 # Ou ajoutez dans /etc/fstab pour montage automatique
 ```
@@ -166,7 +166,7 @@ Cette configuration Neovim inclut :
 
 | Raccourci | Action |
 |-----------|--------|
-| `<Tab><Tab>` | Toggle Neo-tree (fichiers C, C++, Lua, Python, JS) |
+| `<Tab><Tab>` | Toggle Neo-tree |
 | `<F1>` | Insérer header 42 |
 | `<F2>` | Formater selon 42norm |
 | `<F5>` | Lancer la norminette |
@@ -223,7 +223,7 @@ nvim
 Installez une Nerd Font :
 ```bash
 # Téléchargez une Nerd Font depuis https://github.com/ryanoasis/nerd-fonts/releases
-# Exemple avec JetBrainsMono Nerd Font (vérifiez la dernière version)
+# La commande ci-dessous télécharge automatiquement la dernière version
 wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
 unzip JetBrainsMono.zip -d ~/.local/share/fonts/
 fc-cache -fv

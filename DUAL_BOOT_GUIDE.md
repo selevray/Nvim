@@ -19,7 +19,7 @@ Le dual-boot vous permet de :
 
 ### Vous ne perdez RIEN :
 - ❌ Pas de virtualisation lente
-- ❌ Pas de dual-boot "problématique"  
+- ✅ Dual-boot fiable et performant
 - ✅ Performance native sur les deux OS
 - ✅ Accès à tous vos fichiers depuis les deux OS
 
@@ -163,6 +163,7 @@ Si vous voulez que Windows démarre par défaut :
 # Sous Linux
 # D'abord, trouvez la position de Windows dans GRUB
 grep -i windows /boot/grub/grub.cfg | grep menuentry
+# Comptez les entrées depuis le début (la première est 0, la deuxième est 1, etc.)
 
 # Éditez la configuration
 sudo nano /etc/default/grub
@@ -170,7 +171,8 @@ sudo nano /etc/default/grub
 # Trouvez la ligne GRUB_DEFAULT=0
 # Changez-la en utilisant le nom exact ou le numéro de position
 # Option 1 (recommandé) : GRUB_DEFAULT="Windows Boot Manager"
-# Option 2 : GRUB_DEFAULT=2  (remplacez 2 par la bonne position trouvée ci-dessus)
+# Option 2 : GRUB_DEFAULT=N  (N est la position comptée ci-dessus, 0-indexed)
+#   Exemple: si Windows est la 3ème entrée, utilisez GRUB_DEFAULT=2
 
 # Sauvegardez (Ctrl+O, Entrée, Ctrl+X)
 # Appliquez les changements
