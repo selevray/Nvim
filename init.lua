@@ -21,3 +21,4 @@ require("config.keymaps")
 
 -- Charger les automatisations
 require("config.autocmds")
+

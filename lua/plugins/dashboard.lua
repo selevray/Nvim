@@ -36,7 +36,7 @@ return {
         "██████╔╝   ██║       ███████╗███████╗███████╗╚██████╔╝██╔╝ ██╗██╔╝ ██╗",
         "╚═════╝    ╚═╝       ╚══════╝╚══════╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝",
         "",
-        "        🦬 Power, Resilience, Code 🦬         ",
+        "                    🦬 Power, Resilience, Code 🦬                     ",
         "",
       }
       dashboard.section.header.opts.hl = "DashboardHeader"
@@ -336,3 +336,4 @@ return {
 --   5. Quitte : :qa (session auto-sauvegardée)
 --   6. Lendemain, relance : nvim → Dashboard → 's' pour reprendre ✅
 -- ============================================================================
+
